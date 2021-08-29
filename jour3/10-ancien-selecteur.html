@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 id="titre"></h1>
+    <p></p>
+    <p></p>
+    <p></p>
+    <ul>
+        <li class="couleur"></li>
+        <li class="couleur"></li>
+    </ul>
+    <!-- Emmet installé par défaut dans Visual -->
+    <script>
+        // remplir la balise h1 avec du "titre principal"
+        document.querySelector("h1").innerHTML = "titre principal";
+
+        // remplir la balise qui a l'attribut id="titre" avec du "titre principal 2"
+        document.querySelector("#titre").innerHTML = "titre principal 2" ;
+
+        // ancienne méthode 
+        document.getElementById("titre").innerHTML = "titre principal 3" ;
+
+        // remplir tous les p avec le texte "je suis un p"
+        document.querySelectorAll("p").forEach( p =>  p.innerHTML = "je suis un p"  );
+
+        // ancienne méthode en 1995
+        let p = document.getElementsByTagName("p");
+        for(let i = 0 ; i < p.length ; i++){
+            p[i].innerHTML = "je suis un p 2";
+        }
+
+        // remplir toutes les balises qui ont la class couleur 
+        document.querySelectorAll(".couleur").forEach( li => li.innerHTML = "bleu");
+
+        // ancienne méthode en 1995
+        let li = document.getElementsByClassName("couleur");
+        for(let i = 0 ; i < li.length ; i++){
+            li[i].innerHTML = "rouge";
+        }
+
+    </script>
+</body>
+</html>
+
+<!-- 11-balise.html -->
+

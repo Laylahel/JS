@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // fin initiation javascript 
+        // créer le dossier jour3
+        // créer le fichier 01-callback.html 
+
+        // des questions ??? 
+
+        // fonctions => propre javascript // PHP 
+        // callback 
+
+        // le fait de mettre une fonction comme argument // paramètre d'une autre fonction 
+
+        let calculTVA =  prixHt  => prixHt * 1.2 ; 
+
+        // pouvoir utiliser la fonction calculTVA dans une autre fonction 
+        // manière classique 1 
+
+        function genererFacture( total  ){
+            console.log( `votre facture à payer est de ${calculTVA(total)}` );
+        }
+
+        genererFacture( 200 );
+
+
+        // manière 2 => utilisant les callback 
+
+        function genererDevis ( fn , total ){
+            console.log( `votre devis estimé est de ${ fn(total) }` ); // programmation asynchrone 
+            // le total est variable 
+            // la fonction est variable 
+
+        }
+        
+        // au moment exécute la fonction genererDevis
+        genererDevis( function( total ){ return total * 1.05  } , 400 );
+
+        genererDevis( function( total ){ return total * 1.15  } , 400 );
+
+        genererDevis( function( total ){ return total * 1.25  + 25   } , 400 );
+
+        // setTimeout => programmation asynchrone => communiquer avec une base de données => API ( => PHP / js / Python)
+
+        // événement => document.getElementById("button").addEventListener("click", function(){})
+
+        // wordpress (PHP / mySQL ) <= API => Application Program Interface 
+
+
+        // les callback sont aussi TRES utilisé dans les méthodes sur les tableaux
+
+        let jours = ["lundi", "mardi", "mercredi"];
+
+        // méthodes qui prennent des callback 
+        // .map()
+        // .filter()
+        // .reduce()
+        // .forEach() // permet de parcourir un tableau 
+        // afficher dans la console du navigateur "lundi", "mardi", "mercredi"
+
+        for(let i = 0 ; i < jours.length ; i++){
+            console.log(jours[i]);
+        }
+
+        jours.forEach( function( item ){ return console.log(item) } )
+
+        jours.forEach(  item  =>  console.log(item)  ) ;
+
+        jours.forEach(  item  =>   { 
+            let chiffre = 10 ; 
+            console.log(`${item} ${chiffre}`);
+        }  )
+
+        let listePrix = [ 2 ,10, 40 , 20 , 5 ] ; 
+        // récupérer tous les prix > 15  
+
+        for(let i = 0 ; i < listePrix.length ; i++){
+            if(listePrix[i] > 15){
+                console.log(listePrix[i]);
+            }
+        }
+
+        const listeFiltree = listePrix.filter( function( item ){  return item > 15 } ) ;
+        console.log(listeFiltree);
+
+        // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array
+
+        let articles = [ "article 1" , "article 2", "article 3" ];
+        // prendre chaque élément du tableau [ "<h1>article 1</h1>" , "<h1>article 2</h1>", "<h1>article 3</h1>" ];
+
+        // 1
+        let articleHtml = [];
+        for(let i = 0 ; i < articles.length ; i++){
+            articleHtml.push(`<h1>${articles[i]}</h1>`)
+        }
+        console.log(articleHtml);
+
+        // 2
+        const articleHtml2 = articles.map(function( item ){ return `<h1>${item}</h1>`})
+        console.log(articleHtml2);
+
+        // 3
+        console.log(articles.map( item  => `<h1>${item}</h1>` ))
+
+    </script>
+</body>
+</html>
+<!-- 
+    créer le fichier 02-exo.html contient une balise script 
+
+    créer dans cette balise un tableau taches et qui est vide 
+
+    1 ajouter dans ce tableau les deux tâches suivantes : "écrire un email", "rédiger un article "
+
+    2 ajouter entre les deux tâches "regarder une vidéo Youtube sur le sujet"
+
+    3 supprimer la première tâche "écrire un email"
+
+    4 parcourir chaque tâche et ajouter au début et à lafin de la tache une balise <p></p>
+
+    ["<p>regarder une vidéo Youtube sur le sujet</p>" , "<p>rédiger un article </p>"]
+
+-->

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let taches = [];
+        taches.push("écrire un email", "rédiger un article ");
+        taches.splice(1,0, "regarder une vidéo Youtube sur le sujet");
+        taches.shift(); // taches.splice(0,1); 
+
+        let tacheHtml = taches.map( function( item ){  return `<p>${item}</p>` } );
+        // taches.map(  item => `<p>${item}</p>` );        
+        console.log(tacheHtml);
+        console.log(taches);
+        // .map() copie du tableau d'origine taches et l'enrichie 
+
+        // avec un forEach()
+
+        let tacheHTML2 = [];
+
+        taches.forEach( function( item ){ tacheHTML2.push(`<p>${item}</p>`) } )
+        // taches.forEach(  item =>  tacheHTML2.push(`<p>${item}</p>`)  )
+
+        console.log(tacheHTML2);
+    </script>
+</body>
+</html>
+

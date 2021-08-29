@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+      // 07-variable.html 
+        // variable => central en information 
+        // découper le problème que l'on doit traiter en éléments de base 
+
+        // en javascript il existe 3 manières de créer des variables 
+
+        // manière classique (1995) via le mot clé var 
+        var premier = "bonjour";
+
+        // version 6 de javascript ES6 : ECMAScript 6 => 2 nouveaux mots clé
+        let deuxieme = "deuxieme" ;
+        const troisieme = "dernière manière de créer une variable" ;
+
+        // pour l'instant => utiliser la deuxième manière 
+        // quelles sont les différences 3 manières de créer des variables 
+        // portée de variable et type de variable 
+
+        // remarque il est possible de créer une variable sans aucun mot clé 
+
+        quatrieme = "blebel"; // PAS DU CONSEILLEE 
+
+        // en javascript il existe 5 types de base de valeurs stockées dans ds variables 
+
+        // chaine de caractères => string 
+
+        let auteur = "Victor Hugo"; // guillemet
+        let ville = 'Paris' ; // apostrophe
+
+        let tel = `0101010101` ; // ES6 backtick => template string
+
+        // deuxième type de variable => chiffre => number 
+
+        let prix = 12 ; 
+        let taille = 15.5 ; // attention les chiffres à virgule . 
+        let reduction = -0.2 ; // pour les chiffres négatifs coller le symbole - au chiffre
+
+        // troisième type de base => boolean
+
+        let toto = true ;
+        let tata = false ; // attention true et false sont des Mot clé langage javascript
+                            // comme alert() console.log() var const let 
+        
+        // javascript est un langage à typage dynamique 
+        // langage => typescript => introduit le concept de typage 
+        // javascript natif (disponible dans le navigateur )  au moment où tu créés ta variable 
+        // que la variable acquière son type 
+
+        // java => compiler (vérification) => exécution (verifcation )
+        // javascript => exécution (verification ) 
+        // typescript => compiler (vérification) => exécution (verifcation )
+
+        // chrome V8 
+        // Firefox SpyMonkey 
+
+        // variable complexe => variable qui peuvent contenir plusieurs valeurs en même temps
+        // tableau => array
+
+        let courses = [ "pomme", "poire", "banane" ]; // tableau qui contient 3 strings
+        // pas problème pour stocker des valeurs avec des types différents
+        let formation = [ 5 , "jours", true , [] ]; // aucun problème 
+
+        // objet => object => object littéraux 
+
+        let voiture = {  // Python dictionnaire
+            anneeAchat : 2015 ,
+            marque : "VolkWagen",
+            estEnCirculation : true ,
+            options : ["cuir", "wifi"],
+            proprietaire : {
+                nom : "Alain",
+                age : 34
+            }
+        };
+
+        // 5 grands types de variables que l'on peut créer avec javascript 
+        // cet après après midi => chaque type de variable accès et opérations sur ces différents types de variables
+        // remarque : attention en javascript il existe d'autres manières de créer des objets 
+        // string / number / boolean / array / object 
+        // function => TRES TRES différents des autres langages 
+        function a(){}
+        // javascript c'est VRAI => notions supplémentaires 
+        // rdv 13h35 bon appétit 
+  </script>
+</body>
+</html>
+
+<!-- snippet 
+    Ctrl + MAJ + P
+    snippet => Préférences
+    html
+    json 
+-->
